@@ -31,20 +31,35 @@ export default function Home() {
   const current = fields.find((f) => f.key === activeField) ?? fields[1];
 
   return <main>
-    <header className="nav-wrap"><nav className="nav container">
+    <header className="site-header"><nav className="nav container">
       <a href="#top" className="brand"><img src="/brand/sofi-wordmark-dark.svg" alt="sofi" /></a>
-      <div className="nav-links"><a href="#extract">Sofi Extract</a><a href="#workflow">Como funciona</a><a href="#football">Futebol</a><a href="#developers">Para devs</a></div>
-      <a className="nav-cta" href="mailto:hello@sofi.tech">Fale com a sofi <ArrowUpRight size={15}/></a>
+      <div className="nav-links"><a href="#extract">Produto <span>01</span></a><a href="#workflow">Como funciona</a><a href="#football">Futebol</a><a href="#developers">Desenvolvedores</a></div>
+      <a className="nav-cta" href="mailto:hello@sofi.tech">Contato <ArrowUpRight size={15}/></a>
       <button className="menu-toggle" onClick={() => setMobileMenu(!mobileMenu)} aria-label="Abrir menu">{mobileMenu ? <X/> : <Menu/>}</button>
-    </nav>{mobileMenu && <div className="mobile-menu"><a href="#extract" onClick={()=>setMobileMenu(false)}>Sofi Extract</a><a href="#workflow" onClick={()=>setMobileMenu(false)}>Como funciona</a><a href="#football" onClick={()=>setMobileMenu(false)}>Futebol</a><a href="#developers" onClick={()=>setMobileMenu(false)}>Para devs</a></div>}</header>
+    </nav>{mobileMenu && <div className="mobile-menu"><a href="#extract" onClick={()=>setMobileMenu(false)}>Produto</a><a href="#workflow" onClick={()=>setMobileMenu(false)}>Como funciona</a><a href="#football" onClick={()=>setMobileMenu(false)}>Futebol</a><a href="#developers" onClick={()=>setMobileMenu(false)}>Desenvolvedores</a></div>}</header>
 
     <section className="hero container" id="top">
-      <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:.55}} className="hero-copy">
-        <div className="eyebrow"><span/> SOFI / DOCUMENT INTELLIGENCE</div>
-        <h1>O financeiro do jogo.<br/><em>Pronto para análise.</em></h1>
-        <p>Dos boletins financeiros aos dados da partida.<br className="desktop-only"/> Transforme público, arrecadação e despesas em dados estruturados.</p>
-        <div className="hero-actions"><a className="button primary" href="#extract">Conheça o Sofi Extract <ArrowUpRight size={16}/></a><a className="button secondary" href="mailto:hello@sofi.tech">Falar com o time</a></div>
-        <div className="tagline">From documents to data.</div>
+      <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:.6}} className="hero-copy">
+        <div className="hero-text">
+          <div className="eyebrow"><span/> SOFI / DOCUMENT INTELLIGENCE</div>
+          <h1>O financeiro<br/>do jogo. <em>Pronto<br className="hero-break"/> para análise.</em></h1>
+          <p>Dos boletins financeiros aos dados da partida. Transforme público, arrecadação e despesas em dados estruturados.</p>
+          <div className="hero-actions"><a className="button primary" href="#extract">Conheça o Sofi Extract <ArrowUpRight size={16}/></a><a className="button secondary" href="mailto:hello@sofi.tech">Falar com o time</a></div>
+          <div className="tagline">From documents to data.</div>
+        </div>
+        <div className="hero-art" aria-label="Ilustração do fluxo de documentos para dados">
+          <div className="hero-orbit orbit-one"></div><div className="hero-orbit orbit-two"></div>
+          <div className="hero-float-label label-document"><span className="hero-mini-icon pdf-icon"><FileText size={18}/></span><span><b>Documento</b><small>Boletim financeiro</small></span><span className="tiny-dot"></span></div>
+          <div className="hero-main-card">
+            <div className="hero-card-top"><span>SOFI EXTRACT</span><span className="hero-live"><i/> STRUCTURED DATA</span></div>
+            <div className="hero-card-symbol"><div className="symbol-file"><FileText size={31}/></div><div className="symbol-arrow"><ArrowRight size={20}/></div><div className="symbol-code"><Braces size={31}/></div></div>
+            <div className="hero-card-lines"><span></span><span></span><span></span></div>
+            <div className="hero-card-bottom"><span>FROM DOCUMENTS</span><ArrowUpRight size={15}/><span>TO DATA</span></div>
+          </div>
+          <div className="hero-float-label label-data"><span className="hero-mini-icon data-icon"><Braces size={18}/></span><span><b>Dados estruturados</b><small>Prontos para integração</small></span><Check size={16} className="data-check"/></div>
+          <div className="hero-chip chip-one">Público</div><div className="hero-chip chip-two">Arrecadação</div><div className="hero-chip chip-three">Despesas</div>
+          <div className="hero-spark spark-one">✳</div><div className="hero-spark spark-two">✳</div>
+        </div>
       </motion.div>
     </section>
 
